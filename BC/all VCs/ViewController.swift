@@ -20,6 +20,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSecondVC" {
+            if let segmentController = segue.destination as? SecondVC{
+                    // we can pass data here
+            }
+        }
+    }
+    @IBAction func loginAction(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToSecondVC", sender: self)
+    }
+    
 }
 
