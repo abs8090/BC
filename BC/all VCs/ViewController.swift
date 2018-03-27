@@ -7,8 +7,6 @@
 //
 
 
-// testing git push
-
 import UIKit
 
 class ViewController: UIViewController {
