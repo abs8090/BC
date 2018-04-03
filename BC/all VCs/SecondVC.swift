@@ -11,26 +11,44 @@ import UIKit
 class SecondVC: UIViewController {
 
     @IBOutlet weak var fullName: UITextField!
-    
-    
-    @IBOutlet weak var saveEditOutlet: CustomButton!
-    
     @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var saveEditOutlet: CustomButton!
+
     @IBOutlet weak var contactsTableView: UITableView!
+    @IBOutlet weak var iCloudImport: CustomButton!
     
     @IBOutlet weak var modeSwitcher: UISegmentedControl!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func initializeHBM(){
+        contactsTableView.isHidden = false
+        iCloudImport.isHidden = false
+        
         fullName.isHidden = true
         phoneNumber.isHidden = true
         saveEditOutlet.isHidden = true
-        // Do any additional setup after loading the view.
+        emailInput.isHidden = true
+    }
+    
+    func initializeCSM(){
+        contactsTableView.isHidden = true
+        iCloudImport.isHidden = true
+        
+        fullName.isHidden = false
+        phoneNumber.isHidden = false
+        saveEditOutlet.isHidden = false
+        emailInput.isHidden = false
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initializeHBM()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func backAction(_ sender: UIButton) {
@@ -41,17 +59,10 @@ class SecondVC: UIViewController {
     @IBAction func switchMode(_ sender: UISegmentedControl) {
         
         if modeSwitcher.selectedSegmentIndex == 0 {
-            contactsTableView.isHidden = false
+            initializeHBM()
             
-            fullName.isHidden = true
-            phoneNumber.isHidden = true
-            saveEditOutlet.isHidden = true
         }else{
-            contactsTableView.isHidden = true
-            
-            fullName.isHidden = false
-            phoneNumber.isHidden = false
-            saveEditOutlet.isHidden = false
+            initializeCSM()
         }
     }
     
