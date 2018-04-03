@@ -22,15 +22,15 @@ class ViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToSecondVC" {
-            if let segmentController = segue.destination as? SecondVC{
+        if segue.identifier == "goToMaster" {
+            if segue.destination is MasterViewController{
                     // we can pass data here
             }
         }
     }
     @IBAction func loginAction(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "goToSecondVC", sender: self)
+        self.performSegue(withIdentifier: "goToMaster", sender: self)
     }
     
 }

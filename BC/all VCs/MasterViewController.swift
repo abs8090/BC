@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondVC: UIViewController {
+final class MasterViewController: UIViewController {
 
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
