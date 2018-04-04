@@ -9,72 +9,82 @@
 import UIKit
 
 final class MasterViewController: UIViewController {
-
-    @IBOutlet weak var fullName: UITextField!
-    @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var emailInput: UITextField!
-    @IBOutlet weak var saveEditOutlet: CustomButton!
-
-    @IBOutlet weak var contactsTableView: UITableView!
-    @IBOutlet weak var iCloudImport: CustomButton!
     
     @IBOutlet weak var modeSwitcher: UISegmentedControl!
     
-    func initializeHBM(){
-        contactsTableView.isHidden = false
-        iCloudImport.isHidden = false
+    private func setupView(){
+        setupSegmentedControl()
         
-        fullName.isHidden = true
-        phoneNumber.isHidden = true
-        saveEditOutlet.isHidden = true
-        emailInput.isHidden = true
+        updateView()
     }
     
-    func initializeCSM(){
-        contactsTableView.isHidden = true
-        iCloudImport.isHidden = true
+    private func setupSegmentedControl() {
+        modeSwitcher.removeAllSegments()
+        modeSwitcher.insertSegment(withTitle: "Home Base Mode", at: 0, animated: false)
+        modeSwitcher.insertSegment(withTitle: "Contact Sharing Mode", at: 1, animated: false)
+        modeSwitcher.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
         
-        fullName.isHidden = false
-        phoneNumber.isHidden = false
-        saveEditOutlet.isHidden = false
-        emailInput.isHidden = false
+        modeSwitcher.selectedSegmentIndex = 0
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initializeHBM()
-        
+    @objc func selectionDidChange(_ sender: UISegmentedControl) {
+        updateView()
     }
+    
+    private lazy var HBMViewController: HBMViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "HBMViewController")
+        self.add(asChildViewController: viewController)
+        
+        return viewController as! HBMViewController
+    }()
+    
+    private lazy var CSMViewController: CSMViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "CSMViewController")
+        
+        self.add(asChildViewController: viewController)
+        
+        return viewController as! CSMViewController
+    }()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    private func add(asChildViewController viewController: UIViewController){
+        addChildViewController(viewController)
         
+        view.addSubview(viewController.view)
+        
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        viewController.didMove(toParentViewController: self)
     }
     
-    @IBAction func backAction(_ sender: UIButton) {
+    private func remove(asChildViewController viewController: UIViewController) {
+        viewController.willMove(toParentViewController: nil)
         
-        self.dismiss(animated: true, completion: nil)
+        viewController.view.removeFromSuperview()
+
+        viewController.removeFromParentViewController()
     }
     
-    @IBAction func switchMode(_ sender: UISegmentedControl) {
-        
-        if modeSwitcher.selectedSegmentIndex == 0 {
-            initializeHBM()
-            
+    private func updateView() {
+        if modeSwitcher.selectedSegmentIndex == 0{
+            remove(asChildViewController: CSMViewController)
+            add(asChildViewController: HBMViewController)
         }else{
-            initializeCSM()
+            remove(asChildViewController: HBMViewController)
+            add(asChildViewController: CSMViewController)
         }
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupView()
     }
-    */
 
 }
