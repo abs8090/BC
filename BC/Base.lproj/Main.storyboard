@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,7 +20,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-Pb-AR2" customClass="HoshiTextField" customModule="TextFieldEffects">
@@ -123,12 +123,15 @@
             <objects>
                 <viewController storyboardIdentifier="HBMViewController" id="k9P-VX-EB2" customClass="HBMViewController" customModule="BC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SjD-Nu-dAl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-Yf-KBc" customClass="CustomButton" customModule="BC" customModuleProvider="target">
-                                <rect key="frame" x="16" y="490" width="343" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-Yf-KBc" customClass="CustomButton" customModule="BC" customModuleProvider="target">
+                                <rect key="frame" x="16" y="614" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9pk-3f-AUo"/>
+                                    <constraint firstAttribute="width" constant="343" id="K19-8b-TZ2"/>
+                                </constraints>
                                 <state key="normal" title="Send to iCloud">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -141,45 +144,70 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYz-Ps-seo">
-                                <rect key="frame" x="0.0" y="127" width="375" height="318"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYz-Ps-seo">
+                                <rect key="frame" x="0.0" y="106" width="375" height="479"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XjB-S1-7Y6">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XjB-S1-7Y6" id="0Bh-3g-bKG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6me-Mt-P1F">
-                                <rect key="frame" x="16" y="77" width="128" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="backAction:" destination="RF0-kE-M5a" eventType="touchUpInside" id="WVM-gT-dvK"/>
-                                    <action selector="backAction:" destination="k9P-VX-EB2" eventType="touchUpInside" id="jaZ-iM-5f3"/>
-                                </connections>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scanned contacts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-NM-4UK">
+                                <rect key="frame" x="16" y="60" width="141" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-ZQ-AHb" customClass="CustomButton" customModule="BC" customModuleProvider="target">
+                                <rect key="frame" x="313" y="50" width="46" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sf9-QZ-vSz"/>
+                                    <constraint firstAttribute="width" constant="46" id="y2K-DH-2VO"/>
+                                </constraints>
+                                <state key="normal" title="add"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonBotder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBorderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FYz-Ps-seo" firstAttribute="trailing" secondItem="pao-Aq-yzf" secondAttribute="trailing" id="1Dd-mR-oei"/>
+                            <constraint firstItem="jo4-NM-4UK" firstAttribute="top" secondItem="pao-Aq-yzf" secondAttribute="top" constant="16" id="6bz-xy-krb"/>
+                            <constraint firstItem="pao-Aq-yzf" firstAttribute="bottom" secondItem="0HR-Yf-KBc" secondAttribute="bottom" constant="114" id="9pd-Qn-kUz"/>
+                            <constraint firstItem="FYz-Ps-seo" firstAttribute="top" secondItem="LbN-ZQ-AHb" secondAttribute="bottom" constant="16" id="BOV-yX-brS"/>
+                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="top" secondItem="FYz-Ps-seo" secondAttribute="bottom" constant="29" id="EEM-ca-cgD"/>
+                            <constraint firstItem="FYz-Ps-seo" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" id="Kbs-QJ-VD1"/>
+                            <constraint firstItem="jo4-NM-4UK" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" constant="16" id="LUQ-sF-57J"/>
+                            <constraint firstItem="pao-Aq-yzf" firstAttribute="trailing" secondItem="0HR-Yf-KBc" secondAttribute="trailing" constant="16" id="Odb-Qk-C6S"/>
+                            <constraint firstItem="pao-Aq-yzf" firstAttribute="trailing" secondItem="LbN-ZQ-AHb" secondAttribute="trailing" constant="16" id="SHb-sp-zIb"/>
+                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" constant="16" id="d5L-ge-AhW"/>
+                            <constraint firstItem="LbN-ZQ-AHb" firstAttribute="top" secondItem="pao-Aq-yzf" secondAttribute="top" constant="6" id="iFh-pF-VCr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pao-Aq-yzf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xF-Qf-bys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="725"/>
+            <point key="canvasLocation" x="100" y="724.13793103448279"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EW5-MN-E6Y">
             <objects>
                 <viewController storyboardIdentifier="CSMViewController" id="TyB-Im-5fy" customClass="CSMViewController" customModule="BC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bok-yI-RkU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-7y-aoF" customClass="CustomButton" customModule="BC" customModuleProvider="target">
@@ -265,15 +293,20 @@
             <objects>
                 <viewController id="RF0-kE-M5a" customClass="MasterViewController" customModule="BC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EYb-YK-rwU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="7W2-lo-2da"/>
                     </view>
                     <navigationItem key="navigationItem" id="ih6-kU-O8F">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="1Fd-PN-vsy">
+                            <connections>
+                                <action selector="logOutAction:" destination="RF0-kE-M5a" id="PWB-xF-6Lq"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="EgY-dI-jgu">
-                            <rect key="frame" x="40" y="7.5" width="295" height="29"/>
+                            <rect key="frame" x="83" y="7.6666666666666679" width="284" height="29.000000000000004"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="home based mode"/>
@@ -287,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7e-YJ-c6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="45.42728635682159"/>
+            <point key="canvasLocation" x="1396" y="45.073891625615765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gob-7g-Zi3">
@@ -295,7 +328,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfk-4I-K3p" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wC8-uf-e57">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

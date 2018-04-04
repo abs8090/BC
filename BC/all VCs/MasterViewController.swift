@@ -80,6 +80,10 @@ final class MasterViewController: UIViewController {
     }
     
     
+    @IBAction func logOutAction(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
