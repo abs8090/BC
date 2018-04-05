@@ -1,18 +1,18 @@
 //
-//  HBMViewController.swift
+//  ScanningViewController.swift
 //  BC
 //
-//  Created by user134380 on 4/3/18.
+//  Created by Abdulaziz Alhomaidhi on 4/4/18.
 //  Copyright © 2018 Abdulaziz Alhomaidhi. All rights reserved.
 //
 
 import UIKit
 
-class HBMViewController: UIViewController {
+class ScanningViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("hello")
         // Do any additional setup after loading the view.
     }
 
@@ -20,18 +20,6 @@ class HBMViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func backAction(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-
-    
-    @IBAction func addAction(_ sender: UIButton) {
-        
-        self.performSegue(withIdentifier: "goToScanningView", sender: self)
-    }
-    
     
     /*
     // MARK: - Navigation

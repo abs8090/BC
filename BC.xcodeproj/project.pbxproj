@@ -15,6 +15,7 @@
 		896BE487206990910010D658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BE485206990910010D658 /* Main.storyboard */; };
 		896BE489206990910010D658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896BE488206990910010D658 /* Assets.xcassets */; };
 		896BE48C206990910010D658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BE48A206990910010D658 /* LaunchScreen.storyboard */; };
+		89A9A6162075B4E00018EDEB /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A9A6152075B4E00018EDEB /* ScanningViewController.swift */; };
 		89C8C0962069961400C854F3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C0952069961400C854F3 /* CustomButton.swift */; };
 		90B97B0BC28FFF4EC2088CF0 /* Pods_BC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2E69418CE5E6F944E93376 /* Pods_BC.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		896BE488206990910010D658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		896BE48B206990910010D658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		896BE48D206990910010D658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89A9A6152075B4E00018EDEB /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		89C8C0952069961400C854F3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				421E3CF620744F2C0044DCF8 /* MasterViewController.swift */,
 				74F89B39207438C1006918D5 /* HBMViewController.swift */,
 				74F89B3B207438DB006918D5 /* CSMViewController.swift */,
+				89A9A6152075B4E00018EDEB /* ScanningViewController.swift */,
 			);
 			path = "all VCs";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				74F89B3C207438DB006918D5 /* CSMViewController.swift in Sources */,
 				896BE482206990900010D658 /* AppDelegate.swift in Sources */,
 				89C8C0962069961400C854F3 /* CustomButton.swift in Sources */,
+				89A9A6162075B4E00018EDEB /* ScanningViewController.swift in Sources */,
 				421E3CF720744F2C0044DCF8 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
