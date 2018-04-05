@@ -126,26 +126,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-Yf-KBc" customClass="CustomButton" customModule="BC" customModuleProvider="target">
-                                <rect key="frame" x="16" y="635" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="EoW-Ru-IOK"/>
-                                    <constraint firstAttribute="height" constant="50" id="fX0-L0-J37"/>
-                                </constraints>
-                                <state key="normal" title="Send to iCloud">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBorderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonBotder">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYz-Ps-seo">
-                                <rect key="frame" x="0.0" y="132" width="375" height="492"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYz-Ps-seo">
+                                <rect key="frame" x="0.0" y="132" width="375" height="680"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XjB-S1-7Y6">
@@ -158,8 +141,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-Ho-bef">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-Ho-bef">
                                 <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="scanned contancts" id="ASr-mz-TzC">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VpA-2a-HRX">
@@ -172,19 +156,6 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pao-Aq-yzf" firstAttribute="trailing" secondItem="0HR-Yf-KBc" secondAttribute="trailing" constant="16" id="06h-Fx-USt"/>
-                            <constraint firstItem="ecM-Ho-bef" firstAttribute="trailing" secondItem="pao-Aq-yzf" secondAttribute="trailing" id="0uV-Ad-Kcm"/>
-                            <constraint firstItem="FYz-Ps-seo" firstAttribute="top" secondItem="ecM-Ho-bef" secondAttribute="bottom" id="Ab5-XW-0rt"/>
-                            <constraint firstItem="FYz-Ps-seo" firstAttribute="trailing" secondItem="pao-Aq-yzf" secondAttribute="trailing" id="T9u-j3-9Bc"/>
-                            <constraint firstItem="ecM-Ho-bef" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" id="aU8-jJ-gdG"/>
-                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="top" secondItem="FYz-Ps-seo" secondAttribute="bottom" constant="11" id="cbB-02-OQD"/>
-                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="top" secondItem="FYz-Ps-seo" secondAttribute="bottom" constant="11" id="hSb-ft-XU1"/>
-                            <constraint firstItem="FYz-Ps-seo" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" id="iry-i2-4Qq"/>
-                            <constraint firstItem="ecM-Ho-bef" firstAttribute="top" secondItem="SjD-Nu-dAl" secondAttribute="top" constant="88" id="jMz-Ei-Wn8"/>
-                            <constraint firstItem="pao-Aq-yzf" firstAttribute="bottom" secondItem="0HR-Yf-KBc" secondAttribute="bottom" constant="93" id="kRg-wb-uea"/>
-                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" constant="16" id="ovi-T4-s0l"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pao-Aq-yzf"/>
                     </view>
                     <connections>
@@ -250,6 +221,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHB-FZ-H1p" customClass="CustomButton" customModule="BC" customModuleProvider="target">
+                                <rect key="frame" x="16" y="630" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="save to iCloud">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonBotder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBorderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="UqP-1M-gIx"/>
