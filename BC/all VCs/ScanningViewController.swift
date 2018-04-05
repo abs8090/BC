@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class ScanningViewController: UIViewController {
 
+    var centralManager: CBCentralManager!
+    var heartRatePeripheral: CBPeripheral!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,14 +25,41 @@ class ScanningViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func startScanningAction(_ sender: UIButton) {
+        centralManager = CBCentralManager(delegate: self , queue: nil)
     }
-    */
+    
+}
 
+extension ScanningViewController: CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state{
+            
+        case .unknown:
+            print("central.state is .unknown")
+            
+        case .resetting:
+            print("central.state is .resetting")
+            
+        case .unsupported:
+            print("central.state is .unsupported")
+            
+        case .unauthorized:
+            print("central.state is .unauthorized")
+            
+        case .poweredOff:
+            print("central.state is .poweredOff")
+            
+        case .poweredOn:
+            print("central.state is .poweredOn")
+            centralManager.scanForPeripherals(withServices: nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print(peripheral)
+        // centralManager.stopScan()
+        
+    }
+    
 }
