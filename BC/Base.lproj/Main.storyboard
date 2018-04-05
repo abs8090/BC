@@ -127,10 +127,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-Yf-KBc" customClass="CustomButton" customModule="BC" customModuleProvider="target">
-                                <rect key="frame" x="16" y="614" width="343" height="50"/>
+                                <rect key="frame" x="16" y="635" width="343" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9pk-3f-AUo"/>
-                                    <constraint firstAttribute="width" constant="343" id="K19-8b-TZ2"/>
+                                    <constraint firstAttribute="width" constant="343" id="EoW-Ru-IOK"/>
+                                    <constraint firstAttribute="height" constant="50" id="fX0-L0-J37"/>
                                 </constraints>
                                 <state key="normal" title="Send to iCloud">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,7 +145,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FYz-Ps-seo">
-                                <rect key="frame" x="0.0" y="106" width="375" height="479"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="492"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XjB-S1-7Y6">
@@ -158,45 +158,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scanned contacts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-NM-4UK">
-                                <rect key="frame" x="16" y="60" width="141" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-ZQ-AHb" customClass="CustomButton" customModule="BC" customModuleProvider="target">
-                                <rect key="frame" x="313" y="50" width="46" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="sf9-QZ-vSz"/>
-                                    <constraint firstAttribute="width" constant="46" id="y2K-DH-2VO"/>
-                                </constraints>
-                                <state key="normal" title="add"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonBotder">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBorderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="addAction:" destination="k9P-VX-EB2" eventType="touchUpInside" id="g7c-rE-CL6"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-Ho-bef">
+                                <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="scanned contancts" id="ASr-mz-TzC">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VpA-2a-HRX">
+                                            <connections>
+                                                <action selector="add_Action:" destination="k9P-VX-EB2" id="l36-pO-JT2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FYz-Ps-seo" firstAttribute="trailing" secondItem="pao-Aq-yzf" secondAttribute="trailing" id="1Dd-mR-oei"/>
-                            <constraint firstItem="jo4-NM-4UK" firstAttribute="top" secondItem="pao-Aq-yzf" secondAttribute="top" constant="16" id="6bz-xy-krb"/>
-                            <constraint firstItem="pao-Aq-yzf" firstAttribute="bottom" secondItem="0HR-Yf-KBc" secondAttribute="bottom" constant="114" id="9pd-Qn-kUz"/>
-                            <constraint firstItem="FYz-Ps-seo" firstAttribute="top" secondItem="LbN-ZQ-AHb" secondAttribute="bottom" constant="16" id="BOV-yX-brS"/>
-                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="top" secondItem="FYz-Ps-seo" secondAttribute="bottom" constant="29" id="EEM-ca-cgD"/>
-                            <constraint firstItem="FYz-Ps-seo" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" id="Kbs-QJ-VD1"/>
-                            <constraint firstItem="jo4-NM-4UK" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" constant="16" id="LUQ-sF-57J"/>
-                            <constraint firstItem="pao-Aq-yzf" firstAttribute="trailing" secondItem="0HR-Yf-KBc" secondAttribute="trailing" constant="16" id="Odb-Qk-C6S"/>
-                            <constraint firstItem="pao-Aq-yzf" firstAttribute="trailing" secondItem="LbN-ZQ-AHb" secondAttribute="trailing" constant="16" id="SHb-sp-zIb"/>
-                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" constant="16" id="d5L-ge-AhW"/>
-                            <constraint firstItem="LbN-ZQ-AHb" firstAttribute="top" secondItem="pao-Aq-yzf" secondAttribute="top" constant="6" id="iFh-pF-VCr"/>
+                            <constraint firstItem="pao-Aq-yzf" firstAttribute="trailing" secondItem="0HR-Yf-KBc" secondAttribute="trailing" constant="16" id="06h-Fx-USt"/>
+                            <constraint firstItem="ecM-Ho-bef" firstAttribute="trailing" secondItem="pao-Aq-yzf" secondAttribute="trailing" id="0uV-Ad-Kcm"/>
+                            <constraint firstItem="FYz-Ps-seo" firstAttribute="top" secondItem="ecM-Ho-bef" secondAttribute="bottom" id="Ab5-XW-0rt"/>
+                            <constraint firstItem="FYz-Ps-seo" firstAttribute="trailing" secondItem="pao-Aq-yzf" secondAttribute="trailing" id="T9u-j3-9Bc"/>
+                            <constraint firstItem="ecM-Ho-bef" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" id="aU8-jJ-gdG"/>
+                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="top" secondItem="FYz-Ps-seo" secondAttribute="bottom" constant="11" id="cbB-02-OQD"/>
+                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="top" secondItem="FYz-Ps-seo" secondAttribute="bottom" constant="11" id="hSb-ft-XU1"/>
+                            <constraint firstItem="FYz-Ps-seo" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" id="iry-i2-4Qq"/>
+                            <constraint firstItem="ecM-Ho-bef" firstAttribute="top" secondItem="SjD-Nu-dAl" secondAttribute="top" constant="88" id="jMz-Ei-Wn8"/>
+                            <constraint firstItem="pao-Aq-yzf" firstAttribute="bottom" secondItem="0HR-Yf-KBc" secondAttribute="bottom" constant="93" id="kRg-wb-uea"/>
+                            <constraint firstItem="0HR-Yf-KBc" firstAttribute="leading" secondItem="pao-Aq-yzf" secondAttribute="leading" constant="16" id="ovi-T4-s0l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pao-Aq-yzf"/>
                     </view>
@@ -206,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xF-Qf-bys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="723"/>
+            <point key="canvasLocation" x="-207.19999999999999" y="722.66009852216757"/>
         </scene>
         <!--Scanning View Controller-->
         <scene sceneID="NDx-jl-T9C">

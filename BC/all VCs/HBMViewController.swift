@@ -27,10 +27,10 @@ class HBMViewController: UIViewController {
     }
 
     
-    @IBAction func addAction(_ sender: UIButton) {
-        
-        self.performSegue(withIdentifier: "goToScanningView", sender: self)
+    @IBAction func add_Action(_ sender: UIBarButtonItem) {
+          self.performSegue(withIdentifier: "goToScanningView", sender: self)
     }
+    
     
     
     /*
