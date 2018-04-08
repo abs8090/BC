@@ -15,7 +15,7 @@ class ScanningViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    var colorServ = ColorServiceManager()
+    var colorServ = ColorServiceManagerr()
     
     override func viewDidLoad() {
         super.viewDidLoad()

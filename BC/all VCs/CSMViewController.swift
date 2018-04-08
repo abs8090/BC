@@ -15,7 +15,7 @@ class CSMViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     var dataToSend = ""
-    let colorService = ColorServiceManager()
+    let colorService = ColorServiceManagerr()
     
     override func viewDidLoad() {
         super.viewDidLoad()
