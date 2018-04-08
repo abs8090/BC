@@ -10,9 +10,12 @@ import UIKit
 import CoreBluetooth
 
 class ScanningViewController: UIViewController {
-
-    var centralManager: CBCentralManager!
-    var heartRatePeripheral: CBPeripheral!
+    
+    @IBOutlet weak var nameLable: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    var colorServ = ColorServiceManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,40 +29,15 @@ class ScanningViewController: UIViewController {
     }
     
     @IBAction func startScanningAction(_ sender: UIButton) {
-        centralManager = CBCentralManager(delegate: self , queue: nil)
-    }
-    
-}
-
-extension ScanningViewController: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state{
-            
-        case .unknown:
-            print("central.state is .unknown")
-            
-        case .resetting:
-            print("central.state is .resetting")
-            
-        case .unsupported:
-            print("central.state is .unsupported")
-            
-        case .unauthorized:
-            print("central.state is .unauthorized")
-            
-        case .poweredOff:
-            print("central.state is .poweredOff")
-            
-        case .poweredOn:
-            print("central.state is .poweredOn")
-            centralManager.scanForPeripherals(withServices: nil)
-        }
-    }
-    
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print(peripheral)
-        // centralManager.stopScan()
+        let dataReceived : [String] = colorServ.tempData.components(separatedBy: "*")
+        
+        
+        
+        nameLable.text = dataReceived[0]
+        phoneLabel.text = dataReceived[1]
+        emailLabel.text = dataReceived[2]
         
     }
     
 }
+

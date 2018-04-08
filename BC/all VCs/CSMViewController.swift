@@ -9,7 +9,14 @@
 import UIKit
 
 class CSMViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    var dataToSend = ""
+    let colorService = ColorServiceManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +29,32 @@ class CSMViewController: UIViewController {
     }
     
 
+    
+    
+    @IBAction func shareAction(_ sender: UIButton) {
+        
+        if let name = nameTextField.text, let phone = phoneTextField.text, let email = emailTextField.text{
+        
+            dataToSend = name + "*" + phone + "*" + email
+            
+            colorService.tempData = dataToSend
+            colorService.send(colorName: dataToSend)
+            //colorService.send(colorName: name)
+            
+            let destinationViewController = ScanningViewController(nibName: "ScanningViewController", bundle: nil)
+            destinationViewController.colorServ = colorService
+            
+            
+        }else {
+            print("please, enter valid information")
+        }
+        
+        
+
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

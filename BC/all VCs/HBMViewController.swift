@@ -29,6 +29,7 @@ class HBMViewController: UIViewController {
     
     @IBAction func add_Action(_ sender: UIBarButtonItem) {
           self.performSegue(withIdentifier: "goToScanningView", sender: self)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     
