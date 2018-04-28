@@ -16,6 +16,7 @@
 		896BE487206990910010D658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BE485206990910010D658 /* Main.storyboard */; };
 		896BE489206990910010D658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896BE488206990910010D658 /* Assets.xcassets */; };
 		896BE48C206990910010D658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896BE48A206990910010D658 /* LaunchScreen.storyboard */; };
+		8995BFB72092D7460022A54C /* contactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995BFB62092D7460022A54C /* contactInformation.swift */; };
 		89A9A6162075B4E00018EDEB /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A9A6152075B4E00018EDEB /* ScanningViewController.swift */; };
 		89C8C0962069961400C854F3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C0952069961400C854F3 /* CustomButton.swift */; };
 		89EBAFD12079E642003E80EB /* ColorServiceManagerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EBAFD02079E642003E80EB /* ColorServiceManagerr.swift */; };
@@ -37,6 +38,7 @@
 		896BE488206990910010D658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		896BE48B206990910010D658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		896BE48D206990910010D658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8995BFB62092D7460022A54C /* contactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactInformation.swift; sourceTree = "<group>"; };
 		89A9A6152075B4E00018EDEB /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		89C8C0952069961400C854F3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		89EBAFD02079E642003E80EB /* ColorServiceManagerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorServiceManagerr.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				74F89B3B207438DB006918D5 /* CSMViewController.swift */,
 				89EBAFD02079E642003E80EB /* ColorServiceManagerr.swift */,
 				89A9A6152075B4E00018EDEB /* ScanningViewController.swift */,
+				8995BFB62092D7460022A54C /* contactInformation.swift */,
 			);
 			path = "all VCs";
 			sourceTree = "<group>";
@@ -137,7 +140,6 @@
 				896BE47B206990900010D658 /* Frameworks */,
 				896BE47C206990900010D658 /* Resources */,
 				B25C8A6AAFF8233DAB22FEBB /* [CP] Embed Pods Frameworks */,
-				1B48DCB8A0E60198C0CD38EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,34 +199,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B48DCB8A0E60198C0CD38EE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BC/Pods-BC-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A379EBFC87388DB4768E6E2B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BC-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B25C8A6AAFF8233DAB22FEBB /* [CP] Embed Pods Frameworks */ = {
@@ -233,9 +223,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BC/Pods-BC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -251,6 +248,7 @@
 			files = (
 				74F89B3A207438C1006918D5 /* HBMViewController.swift in Sources */,
 				89EBAFD12079E642003E80EB /* ColorServiceManagerr.swift in Sources */,
+				8995BFB72092D7460022A54C /* contactInformation.swift in Sources */,
 				896BE484206990900010D658 /* ViewController.swift in Sources */,
 				74F89B3C207438DB006918D5 /* CSMViewController.swift in Sources */,
 				896BE482206990900010D658 /* AppDelegate.swift in Sources */,

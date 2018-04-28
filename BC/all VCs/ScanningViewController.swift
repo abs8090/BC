@@ -14,12 +14,13 @@ class ScanningViewController: UIViewController {
     @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    var fullContact: String = ""
     
     var colorServ = ColorServiceManagerr()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 
@@ -37,6 +38,10 @@ class ScanningViewController: UIViewController {
         phoneLabel.text = dataReceived[1]
         emailLabel.text = dataReceived[2]
         
+    }
+    @IBAction func saveToTable(_ sender: UIButton) {
+        fullContact = nameLable.text! + "\n" + phoneLabel.text! + "\n" + emailLabel.text!
+        contactInformation.contactArray.append(fullContact)
     }
     
 }

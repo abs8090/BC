@@ -6,5 +6,8 @@ target 'BC' do
   use_frameworks!
 
   # Pods for BC
-	pod 'TextFieldEffects'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    # pod 'TextFieldEffects'
+    
 end

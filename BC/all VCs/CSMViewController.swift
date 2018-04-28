@@ -19,7 +19,7 @@ class CSMViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 
@@ -27,9 +27,7 @@ class CSMViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
+        
     
     @IBAction func shareAction(_ sender: UIButton) {
         

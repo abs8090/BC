@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class contactInformation {
+    static var contactArray = [String]()
+    
+    var contactInfo: String
+    
+    private init(){
+        self.contactInfo = ""
+    }
+    init(contactInfo: String) {
+        self.contactInfo = contactInfo
+    }
+}

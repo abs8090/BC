@@ -8,10 +8,21 @@
 
 import UIKit
 
-class HBMViewController: UIViewController {
-
+class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var myTableView: UITableView!
+//        {
+//        didSet{
+//            myTableView.dataSource = (self as! UITableViewDataSource)
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        myTableView.dataSource = self
+        myTableView.delegate = self
+        self.myTableView.addSubview(self.refreshControl)
+        self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +30,34 @@ class HBMViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HBMViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.red
+        self.myTableView.reloadData()
+        return refreshControl
+    }()
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.myTableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if contactInformation.contactArray.count == 0 {
+            return 0
+        }
+        
+        return contactInformation.contactArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        let contact = contactInformation.contactArray[indexPath.row]
+        cell.textLabel?.text = contact
+        return cell
     }
     
     @IBAction func backAction(_ sender: UIButton) {
