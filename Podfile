@@ -8,6 +8,7 @@ target 'BC' do
   # Pods for BC
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Database'
     # pod 'TextFieldEffects'
     
 end

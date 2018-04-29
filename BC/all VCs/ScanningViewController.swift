@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreBluetooth
+import Firebase
+import FirebaseDatabase
 
 class ScanningViewController: UIViewController {
     
@@ -17,7 +19,9 @@ class ScanningViewController: UIViewController {
     var fullContact: String = ""
     
     var colorServ = ColorServiceManagerr()
-    
+
+    let email = UserDefaults.standard.object(forKey: "email")
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -42,7 +46,16 @@ class ScanningViewController: UIViewController {
     @IBAction func saveToTable(_ sender: UIButton) {
         fullContact = nameLable.text! + "\n" + phoneLabel.text! + "\n" + emailLabel.text!
         contactInformation.contactArray.append(fullContact)
+        
+       
+        
+        let databaseRef = Database.database().reference()
+        databaseRef.child(email as! String).childByAutoId().setValue(fullContact)
+        
+    
     }
+    
+
     
 }
 

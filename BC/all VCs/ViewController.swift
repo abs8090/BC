@@ -41,6 +41,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func loginAction(_ sender: UIButton) {
+
+        let defaults =  UserDefaults.standard
+        defaults.set(emailAdress.text!, forKey: "email")
+        defaults.set(password.text!, forKey: "password")
+        defaults.synchronize()
         
         Auth.auth().signIn(withEmail: emailAdress.text!, password: password.text!, completion: {(user, error) in
             
