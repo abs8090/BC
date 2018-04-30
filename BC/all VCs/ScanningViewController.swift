@@ -47,7 +47,7 @@ class ScanningViewController: UIViewController {
         
     }
     @IBAction func saveToTable(_ sender: UIButton) {
-        fullContact = nameLable.text! + "\n" + phoneLabel.text! + "\n" + emailLabel.text!
+        fullContact = nameLable.text! + ", " + phoneLabel.text! + ", " + emailLabel.text!
         contactInformation.contactArray.append(fullContact)
         
         

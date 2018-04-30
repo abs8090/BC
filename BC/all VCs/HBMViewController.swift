@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var ref: DatabaseReference!
+    var entries = [String]()
+   
     
     @IBOutlet weak var myTableView: UITableView!
 //        {
@@ -23,7 +29,18 @@ class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDel
         myTableView.delegate = self
         self.myTableView.addSubview(self.refreshControl)
         self.hideKeyboardWhenTappedAround()
-
+         ref = Database.database().reference()
+        let uid = UserDefaults.standard.object(forKey: "uid")
+        
+        ref.child((uid as! String?)!).observe(.value, with: { (snapshot) in
+            let result = snapshot.value as! [String:AnyObject]?
+            
+            self.entries = Array(result!.values) as! [String]
+        
+         
+        })
+    
+        
         // Do any additional setup after loading the view.
     }
 
@@ -46,16 +63,18 @@ class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if contactInformation.contactArray.count == 0 {
+        
+        
+        if entries.count == 0 {
             return 0
         }
         
-        return contactInformation.contactArray.count
+        return entries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
-        let contact = contactInformation.contactArray[indexPath.row]
+        let contact = entries[indexPath.row]
         cell.textLabel?.text = contact
         return cell
     }
