@@ -20,11 +20,14 @@ class ScanningViewController: UIViewController {
     
     var colorServ = ColorServiceManagerr()
 
-    let email = UserDefaults.standard.object(forKey: "email")
-  
+    let uid = UserDefaults.standard.object(forKey: "uid")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        print("the logged in user is ", uid)
         // Do any additional setup after loading the view.
     }
 
@@ -47,10 +50,11 @@ class ScanningViewController: UIViewController {
         fullContact = nameLable.text! + "\n" + phoneLabel.text! + "\n" + emailLabel.text!
         contactInformation.contactArray.append(fullContact)
         
+        
        
         
         let databaseRef = Database.database().reference()
-        databaseRef.child(email as! String).childByAutoId().setValue(fullContact)
+        databaseRef.child(uid as! String).childByAutoId().setValue(fullContact)
         
     
     }

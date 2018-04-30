@@ -44,13 +44,16 @@ class ViewController: UIViewController {
 
         let defaults =  UserDefaults.standard
         defaults.set(emailAdress.text!, forKey: "email")
-        defaults.set(password.text!, forKey: "password")
+        
         defaults.synchronize()
         
         Auth.auth().signIn(withEmail: emailAdress.text!, password: password.text!, completion: {(user, error) in
             
             if user != nil {
                 // sign in success
+                defaults.set(Auth.auth().currentUser?.uid, forKey: "uid")
+                
+                
                  self.performSegue(withIdentifier: "goToMaster", sender: self)
             } else {
                 if let myError = error?.localizedDescription {
