@@ -19,6 +19,8 @@
 		8995BFB72092D7460022A54C /* contactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995BFB62092D7460022A54C /* contactInformation.swift */; };
 		89A9A6162075B4E00018EDEB /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A9A6152075B4E00018EDEB /* ScanningViewController.swift */; };
 		89C8C0962069961400C854F3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8C0952069961400C854F3 /* CustomButton.swift */; };
+		89E1358A2096F16400EB0411 /* DesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E135892096F16400EB0411 /* DesignCell.swift */; };
+		89E1358C2096F39800EB0411 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1358B2096F39800EB0411 /* CustomCell.swift */; };
 		89EBAFD12079E642003E80EB /* ColorServiceManagerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EBAFD02079E642003E80EB /* ColorServiceManagerr.swift */; };
 		90B97B0BC28FFF4EC2088CF0 /* Pods_BC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2E69418CE5E6F944E93376 /* Pods_BC.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		8995BFB62092D7460022A54C /* contactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactInformation.swift; sourceTree = "<group>"; };
 		89A9A6152075B4E00018EDEB /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		89C8C0952069961400C854F3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		89E135892096F16400EB0411 /* DesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCell.swift; sourceTree = "<group>"; };
+		89E1358B2096F39800EB0411 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		89EBAFD02079E642003E80EB /* ColorServiceManagerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorServiceManagerr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				89C8C0952069961400C854F3 /* CustomButton.swift */,
+				89E135892096F16400EB0411 /* DesignCell.swift */,
+				89E1358B2096F39800EB0411 /* CustomCell.swift */,
 			);
 			path = "custom UI classes";
 			sourceTree = "<group>";
@@ -250,7 +256,9 @@
 			files = (
 				74F89B3A207438C1006918D5 /* HBMViewController.swift in Sources */,
 				89EBAFD12079E642003E80EB /* ColorServiceManagerr.swift in Sources */,
+				89E1358C2096F39800EB0411 /* CustomCell.swift in Sources */,
 				8995BFB72092D7460022A54C /* contactInformation.swift in Sources */,
+				89E1358A2096F16400EB0411 /* DesignCell.swift in Sources */,
 				896BE484206990900010D658 /* ViewController.swift in Sources */,
 				74F89B3C207438DB006918D5 /* CSMViewController.swift in Sources */,
 				896BE482206990900010D658 /* AppDelegate.swift in Sources */,

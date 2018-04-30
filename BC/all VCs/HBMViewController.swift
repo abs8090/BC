@@ -73,9 +73,15 @@ class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         let contact = entries[indexPath.row]
-        cell.textLabel?.text = contact
+        print("printing: " + contact)
+        //        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        cell.configureProductCell(contact: contact)
+        
+        
         return cell
     }
     

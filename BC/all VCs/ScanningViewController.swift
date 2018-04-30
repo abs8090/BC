@@ -39,11 +39,11 @@ class ScanningViewController: UIViewController {
     @IBAction func startScanningAction(_ sender: UIButton) {
         let dataReceived : [String] = colorServ.tempData.components(separatedBy: "*")
         
-        
-        
-        nameLable.text = dataReceived[0]
-        phoneLabel.text = dataReceived[1]
-        emailLabel.text = dataReceived[2]
+        if dataReceived[0] != "" && dataReceived[1] != "" && dataReceived[2] != "" {
+            nameLable.text = dataReceived[0]
+            phoneLabel.text = dataReceived[1]
+            emailLabel.text = dataReceived[2]
+        }
         
     }
     @IBAction func saveToTable(_ sender: UIButton) {
