@@ -32,16 +32,11 @@ class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDel
          ref = Database.database().reference()
         let uid = UserDefaults.standard.object(forKey: "uid")
         
+        // load entries from firebase into table view
         ref.child((uid as! String?)!).observe(.value, with: { (snapshot) in
             let result = snapshot.value as! [String:AnyObject]?
-            
             self.entries = Array(result!.values) as! [String]
-        
-         
         })
-    
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,12 +58,9 @@ class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
         if entries.count == 0 {
             return 0
         }
-        
         return entries.count
     }
     
@@ -76,9 +68,6 @@ class HBMViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         let contact = entries[indexPath.row]
-        print("printing: " + contact)
-        //        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        
         cell.configureProductCell(contact: contact)
         
         

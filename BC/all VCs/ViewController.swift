@@ -15,9 +15,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var emailAdress: UITextField!
-    
     @IBOutlet weak var password: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,37 +36,32 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
+    // login here
     @IBAction func loginAction(_ sender: UIButton) {
-
+        
+        // save user to session
         let defaults =  UserDefaults.standard
         defaults.set(emailAdress.text!, forKey: "email")
-        
         defaults.synchronize()
         
         Auth.auth().signIn(withEmail: emailAdress.text!, password: password.text!, completion: {(user, error) in
             
             if user != nil {
-                // sign in success
+                // sign in success, save uid to session
+                print("sign in succes")
                 defaults.set(Auth.auth().currentUser?.uid, forKey: "uid")
-                
-                
-                 self.performSegue(withIdentifier: "goToMaster", sender: self)
+                self.performSegue(withIdentifier: "goToMaster", sender: self)
             } else {
+                // print error if sign in unsuccessful
+                print("failed to sign in")
                 if let myError = error?.localizedDescription {
                     print (myError)
                 } else {
                     print("Error")
                 }
             }
-            
         })
-       
     }
-    
-    
-
 }
 
 extension UIViewController{

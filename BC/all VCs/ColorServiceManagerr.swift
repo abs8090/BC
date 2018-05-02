@@ -20,7 +20,6 @@ class ColorServiceManagerr : NSObject {
     //    var temp = ColorSwitchViewController()
     
     private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
-    
     private let serviceAdvertiser : MCNearbyServiceAdvertiser
     private let serviceBrowser : MCNearbyServiceBrowser
     
@@ -53,18 +52,14 @@ class ColorServiceManagerr : NSObject {
             }
             catch let error {
                 NSLog("%@", "Error for sending: \(error)")
-                
-                
             }
         }
-        
     }
     
     deinit {
         self.serviceAdvertiser.stopAdvertisingPeer()
         self.serviceBrowser.stopBrowsingForPeers()
     }
-    
 }
 
 extension ColorServiceManagerr : MCNearbyServiceAdvertiserDelegate {

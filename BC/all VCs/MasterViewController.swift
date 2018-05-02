@@ -23,7 +23,6 @@ final class MasterViewController: UIViewController {
         modeSwitcher.insertSegment(withTitle: "Home Base Mode", at: 0, animated: false)
         modeSwitcher.insertSegment(withTitle: "Contact Sharing Mode", at: 1, animated: false)
         modeSwitcher.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
-        
         modeSwitcher.selectedSegmentIndex = 0
     }
     
@@ -33,39 +32,29 @@ final class MasterViewController: UIViewController {
     
     private lazy var HBMViewController: HBMViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
         var viewController = storyboard.instantiateViewController(withIdentifier: "HBMViewController")
         self.add(asChildViewController: viewController)
-        
         return viewController as! HBMViewController
     }()
     
     private lazy var CSMViewController: CSMViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
         var viewController = storyboard.instantiateViewController(withIdentifier: "CSMViewController")
-        
         self.add(asChildViewController: viewController)
-        
         return viewController as! CSMViewController
     }()
 
     private func add(asChildViewController viewController: UIViewController){
         addChildViewController(viewController)
-        
         view.addSubview(viewController.view)
-        
         viewController.view.frame = view.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         viewController.didMove(toParentViewController: self)
     }
     
     private func remove(asChildViewController viewController: UIViewController) {
         viewController.willMove(toParentViewController: nil)
-        
         viewController.view.removeFromSuperview()
-
         viewController.removeFromParentViewController()
     }
     
@@ -82,12 +71,10 @@ final class MasterViewController: UIViewController {
     
     @IBAction func logOutAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
     }
 
