@@ -32,35 +32,14 @@ class CSMViewController: UIViewController {
     @IBAction func shareAction(_ sender: UIButton) {
         
         if let name = nameTextField.text, let phone = phoneTextField.text, let email = emailTextField.text{
-        
             dataToSend = name + "*" + phone + "*" + email
-            
             colorService.tempData = dataToSend
             colorService.send(colorName: dataToSend)
-            //colorService.send(colorName: name)
-            
             let destinationViewController = ScanningViewController(nibName: "ScanningViewController", bundle: nil)
             destinationViewController.colorServ = colorService
             
-            
-        }else {
+        } else {
             print("please, enter valid information")
         }
-        
-        
-
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

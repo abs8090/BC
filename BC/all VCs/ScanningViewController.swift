@@ -26,9 +26,6 @@ class ScanningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        
-        print("the logged in user is ", uid)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,19 +44,13 @@ class ScanningViewController: UIViewController {
         
     }
     @IBAction func saveToTable(_ sender: UIButton) {
+        // deprecated - saves to local table instead of cloud
         fullContact = nameLable.text! + ", " + phoneLabel.text! + ", " + emailLabel.text!
         contactInformation.contactArray.append(fullContact)
         
-        
-       
-        
+        // save to firebase here
         let databaseRef = Database.database().reference()
         databaseRef.child(uid as! String).childByAutoId().setValue(fullContact)
-        
-    
     }
-    
-
-    
 }
 
