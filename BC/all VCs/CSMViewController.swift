@@ -15,7 +15,7 @@ class CSMViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     var dataToSend = ""
-    let colorService = ColorServiceManagerr()
+    let bluetoothObj = BluetoothClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,10 @@ class CSMViewController: UIViewController {
         
         if let name = nameTextField.text, let phone = phoneTextField.text, let email = emailTextField.text{
             dataToSend = name + "*" + phone + "*" + email
-            colorService.tempData = dataToSend
-            colorService.send(colorName: dataToSend)
+            bluetoothObj.tempData = dataToSend
+            bluetoothObj.send(colorName: dataToSend)
             let destinationViewController = ScanningViewController(nibName: "ScanningViewController", bundle: nil)
-            destinationViewController.colorServ = colorService
+            destinationViewController.bluetoothObj = bluetoothObj
             
         } else {
             print("please, enter valid information")

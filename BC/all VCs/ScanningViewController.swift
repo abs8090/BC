@@ -18,7 +18,7 @@ class ScanningViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     var fullContact: String = ""
     
-    var colorServ = ColorServiceManagerr()
+    var bluetoothObj = BluetoothClass()
 
     let uid = UserDefaults.standard.object(forKey: "uid")
     
@@ -34,7 +34,7 @@ class ScanningViewController: UIViewController {
     }
     
     @IBAction func startScanningAction(_ sender: UIButton) {
-        let dataReceived : [String] = colorServ.tempData.components(separatedBy: "*")
+        let dataReceived : [String] = bluetoothObj.tempData.components(separatedBy: "*")
         
         if dataReceived[0] != "" && dataReceived[1] != "" && dataReceived[2] != "" {
             nameLable.text = dataReceived[0]

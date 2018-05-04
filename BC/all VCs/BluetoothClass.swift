@@ -11,7 +11,7 @@ import MultipeerConnectivity
 
 
 
-class ColorServiceManagerr : NSObject {
+class BluetoothClass : NSObject {
     
     // Service type must be a unique string, at most 15 characters long
     // and can contain only ASCII lowercase letters, numbers and hyphens.
@@ -62,7 +62,7 @@ class ColorServiceManagerr : NSObject {
     }
 }
 
-extension ColorServiceManagerr : MCNearbyServiceAdvertiserDelegate {
+extension BluetoothClass : MCNearbyServiceAdvertiserDelegate {
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
         NSLog("%@", "didNotStartAdvertisingPeer: \(error)")
@@ -75,7 +75,7 @@ extension ColorServiceManagerr : MCNearbyServiceAdvertiserDelegate {
     
 }
 
-extension ColorServiceManagerr : MCNearbyServiceBrowserDelegate {
+extension BluetoothClass : MCNearbyServiceBrowserDelegate {
     
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
         NSLog("%@", "didNotStartBrowsingForPeers: \(error)")
@@ -94,7 +94,7 @@ extension ColorServiceManagerr : MCNearbyServiceBrowserDelegate {
     
 }
 
-extension ColorServiceManagerr : MCSessionDelegate {
+extension BluetoothClass : MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         NSLog("%@", "peer \(peerID) didChangeState: \(state)")
